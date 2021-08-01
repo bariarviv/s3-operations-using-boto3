@@ -1,4 +1,4 @@
-# Bari Arviv
+# Bari Arviv - s3 operation using boto3
 import boto3
 import logging
 from botocore.client import Config
@@ -6,22 +6,22 @@ from botocore.exceptions import ClientError
 
 ## Global variables
 # Parameters for connection to s3:
-A_KEY = 'XXXXXX'
-S_KEY = 'XXXXXX'
 REGION = 'XXXXXX'
 VERSION = 'XXXXXX'
+ACCESS_KEY = 'XXXXXX'
+SECRET_ACCESS_KEY = 'XXXXXX'
 END_POINT_URL = 'XXXXXX' 
 
 # Objects to perform actions: client is swiss knife , resource has all sort of data:
 s3_resource = boto3.resource('s3', endpoint_url=END_POINT_URL,
-                             aws_access_key_id=A_KEY,
-                             aws_secret_access_key=S_KEY,
+                             aws_access_key_id=ACCESS_KEY,
+                             aws_secret_access_key=SECRET_ACCESS_KEY,
                              config=Config(signature_version=VERSION),
                              region_name=REGION)
 
 s3_client = boto3.client('s3', endpoint_url=END_POINT_URL,
-                         aws_access_key_id=A_KEY,
-                         aws_secret_access_key=S_KEY,
+                         aws_access_key_id=ACCESS_KEY,
+                         aws_secret_access_key=SECRET_ACCESS_KEY,
                          config=Config(signature_version=VERSION),
                          region_name=REGION)
 
