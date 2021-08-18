@@ -98,7 +98,7 @@ def main():
     if bucket_operations(bucket_name, 'create'):
         print("Bucket creation completed successfully!")
     
-    # פrint the list of existing buckets
+    # print the list of existing buckets
     bucket_operations(operation='list')
     # print the files in a bucket
     file_operations(bucket_name, operation='list')
